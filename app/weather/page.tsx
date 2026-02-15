@@ -28,7 +28,7 @@ export default async function WeatherPage({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 {/* Weather Section */}
                 <div className="bg-white/5 p-6 rounded-xl border border-white/10 shadow-lg">
-                    <h2 className="text-xl font-semibold mb-4 text-blue-400">Current Weather (Moscow {lat}/{long})</h2>
+                    <h2 className="text-xl font-semibold mb-4 text-blue-400">Current Weather (latitude {lat}/ longitude {long})</h2>
                     <div className="space-y-2">
                         <p className="text-4xl font-bold">{weatherData.current_weather.temperature}°C</p>
                         <p className="text-gray-400">Wind Speed: {weatherData.current_weather.windspeed} km/h</p>

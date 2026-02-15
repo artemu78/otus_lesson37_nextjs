@@ -1,7 +1,8 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useContext } from 'react'
 import { getWeatherByCoords } from './actions'
+import { ThemeContext } from "@/components/GeneralContext";
 
 const initialState = {
   error: null as string | null,
@@ -9,12 +10,14 @@ const initialState = {
 }
 
 export function WeatherForm() {
+  const { theme } = useContext(ThemeContext) || {};
+  console.log({ theme });
   const [state, formAction, pending] = useActionState(getWeatherByCoords, initialState)
 
   return (
     <div className="bg-white/5 p-6 rounded-xl border border-white/10 shadow-lg">
       <h2 className="text-xl font-semibold mb-4 text-blue-400">Get Weather by Coordinates</h2>
-      
+
       <form action={formAction} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
